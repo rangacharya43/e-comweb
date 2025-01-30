@@ -138,56 +138,53 @@
 
 
     <script>document.addEventListener('DOMContentLoaded', function () {
-            const cartItemsContainer = document.getElementById('cart-items');
-            const totalAmountElement = document.getElementById('total-amount');
-            const checkoutBtn = document.getElementById('checkout-btn');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const totalAmountElement = document.getElementById('total-amount');
+        const checkoutBtn = document.getElementById('checkout-btn');
 
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = `<p class="text-center">Your cart is empty.</p>`;
-                checkoutBtn.disabled = true;
-            } else {
-                let totalAmount = 0;
-                cartItemsContainer.innerHTML = '';
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = `<p class="text-center">Your cart is empty.</p>`;
+            checkoutBtn.disabled = true;
+        } else {
+            let totalAmount = 0;
+            cartItemsContainer.innerHTML = '';
 
-                cart.forEach((item, index) => {
-                    const itemCard = document.createElement('div');
-                    itemCard.className = 'card mb-3';
-                    itemCard.innerHTML = `
-                    <div class="card-body d-flex justify-content-between">
-                        <div class= d-flex>
-                            <img src="${item.thumbnail}" class="card-img-top" style="height:360px" alt="Image of ${item.name}">
-                            <div>
-                                <h5 class="card-title">${item.name}</h5>
-                            <p class="card-text">${item.description}</p>
-                            <p><strong>shippingInformation:</strong> ${product.shippingInformation}</p>
-                            <p class="text-primary fw-bold">${item.price}</p>
-                            </div>
-                        </div>
-                        <div>
-                            <button class="btn btn-danger btn-sm remove-item" data-index="${index}">
-                                <i class="fas fa-trash"></i> Remove
-                            </button>
-                        </div>
+            cart.forEach((item, index) => {
+                const itemCard = document.createElement('div');
+                itemCard.className = 'card mb-3';
+                itemCard.innerHTML = `
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <img src="${item.thumbnail}" class="card-img-top" alt="Image of ${item.name}">
+                        <h5 class="card-title">${item.name}</h5>
+                        <p class="card-text">${item.description}</p>
+                        <p class="text-primary fw-bold">${item.price}</p>
                     </div>
-                `;
+                    <div>
+                        <button class="btn btn-danger btn-sm remove-item" data-index="${index}">
+                            <i class="fas fa-trash"></i> Remove
+                        </button>
+                    </div>
+                </div>
+            `;
 
-                    cartItemsContainer.appendChild(itemCard);
-                    totalAmount += parseFloat(item.price.replace('$', ''));
+                cartItemsContainer.appendChild(itemCard);
+                totalAmount += parseFloat(item.price.replace('$', ''));
 
-                    itemCard.querySelector('.remove-item').addEventListener('click', function () {
-                        const itemIndex = this.getAttribute('data-index');
-                        cart.splice(itemIndex, 1);
-                        localStorage.setItem('cart', JSON.stringify(cart));
-                        window.location.reload();
-                    });
+                itemCard.querySelector('.remove-item').addEventListener('click', function () {
+                    const itemIndex = this.getAttribute('data-index');
+                    cart.splice(itemIndex, 1);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    window.location.reload();
                 });
+            });
 
-                totalAmountElement.textContent = totalAmount.toFixed(2);
-            }
-        });
-    </script>
+            totalAmountElement.textContent = totalAmount.toFixed(2);
+        }
+    });
+</script>
 
 
 </body>
