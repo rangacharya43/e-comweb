@@ -10,20 +10,20 @@
     <link rel="stylesheet" href="Styles/navbar.css">
     <style>
          body{
-            background: linear-gradient(to right, #665d94, #5eaadd96);
+            background: linear-gradient(to top,  #5eaadd96, #665d94);
         }
     </style>
 </head>
 
 <body class="bg-light">
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-md ">
         <div class="container-fluid">
-            <h4 style="padding-left: 2%;"> <a class="navbar-brand text-info" href="productStore.html"> <span style="color: #9181e9;">Urban</span>Nest</a></h4>
+            <h2 style="padding-left: 2%;"> <a class="brand text-info" href="productStore.html"><span style="color: #9181e9;">Urban</span>Nest</a></h2>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon " style="color: #28e3fc;"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -37,13 +37,12 @@
                         <a class="nav-link nav-text" href="productStore.html">Contact us</a>
                     </li>
                  
-                </ul>
-                <div>
-                    <a class="btn btn-outline-primary" href="cart.html">
-                        <i class="fas fa-shopping-cart"></i> Cart
-                    </a>
-                </div>
-                
+                </ul> 
+            </div>
+            <div>
+                <a class="btn btn-outline-dark bg-info" href="cart.html">
+                    <i class="fas fa-shopping-cart" style="font-size:24px;"></i> Cart
+                </a>
             </div>
         </div>
     </nav>
@@ -103,7 +102,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">${product.title}</h5>
                                         <p class="card-text">${product.description}</p>
-                                        <p class="text-primary fw-bold">$${product.price}</p>
+                                        <p class="text-primary fw-bold">₹${product.price}</p>
                                         <p><strong>Brand:</strong> ${product.brand}</p>
                                         <p><strong>Category:</strong> ${product.category}</p>
                                         <p><strong>Rating:</strong> ${product.rating} stars</p>
@@ -129,7 +128,7 @@
                             id: product.id,
                             name: product.title,
                             description: product.description,
-                            price: '$' + product.price,
+                            price: '₹' + product.price,
                             thumbnail: product.thumbnail
                         };
 
@@ -152,7 +151,7 @@
                                             <img src="${categoryProduct.thumbnail}" class="card-img-top" alt="Image of ${categoryProduct.title}">
                                             <div class="card-body">
                                                 <h5 class="card-title">${categoryProduct.title}</h5>
-                                                <p class="text-primary fw-bold">$${categoryProduct.price}</p>
+                                                <p class="text-primary fw-bold">₹${categoryProduct.price}</p>
                                                 <a href="product.html?id=${categoryProduct.id}" class="btn btn-info">Learn More</a>
                                             </div>
                                         </div>

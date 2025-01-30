@@ -17,7 +17,7 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-md bg-body-tertiary">
         <div class="container-fluid">
             <h4 style="padding-left: 2%;"> <a class="navbar-brand text-info" href="#"> <span style="color: #9181e9;">Urban</span>Nest</a></h4>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -38,11 +38,11 @@
                     </li>
                  
                 </ul>
-                <form class="d-flex" role="search">
-                   <h4>Cart</h4>
-                    <a class="nav-link nav-text" href="cart.html"><i class="fa fa-shopping-cart"
-                        style="font-size:38px;color:#9181e998"></i></a>
-                </form>
+            </div>
+            <a class="btn btn-outline-dark bg-info" href="cart.html">
+                <i class="fas fa-shopping-cart" style="font-size:24px;"></i> Cart
+            </a>
+        </div>
             </div>
         </div>
     </nav>
@@ -51,10 +51,10 @@
         <div class="container-fluid text-center text-md-start">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="header-content">
+                    <div class="header-content p-4">
                         <h1>Experience <span></span></h1>
                         <p>Multipurpose eCommerce HTML Template</p>
-                        <a href="productStore.html" class="main-btn">Purchase Now</a>
+                        <a href="productStore.html" class="main-btn">Start Shopping</a>
                     </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@
         <div class="col-md-3">
             <a href="productStore.html">
                 <div class="custom-main-card shadow-lg p-3 rounded">
-                    <img src="https://images.pexels.com/photos/319798/pexels-photo-319798.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    <img src="https://images.pexels.com/photos/7890120/pexels-photo-7890120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                         class="custom-card-img-top rounded" alt="Main Card 2">
                     <div class="custom-card-body mt-3">
                         <h5 class="custom-card-title text-center">Groceries</h5>
@@ -110,11 +110,10 @@
                 </div>
             </a>
         </div>
-
-
     </div>
 
-    <div class="container-fluid content justify-content-between" style="display: flex; gap: 10px; flex-wrap: wrap;">
+    <h1 class="text-center">Some other products You may be intrested</h1>
+    <div class="container-fluid content justify-content-center" style="display: flex; gap: 10px; flex-wrap: wrap;">
         <div class="card " style="width: 18rem;">
             <img src="https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="..." style="height: 200px; object-fit: cover;">
             <div class="card-body" style="height: 200px; overflow: hidden;">
@@ -228,6 +227,8 @@
                 if (charIndex >= currentWord.length) {
                     typedText = typedText.replace('UrbonNest',
                         '<span style="color: #55466d;">Urbon</span><span style="color: #33b5ff;">Nest</span>');
+                        // <span style="color: #9181e9;">Urban</span><span style="color: #17a2b8;">Nest</span>
+
                 }
                 dynamicText.innerHTML = typedText;
             } else {
