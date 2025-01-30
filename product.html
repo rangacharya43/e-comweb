@@ -12,6 +12,10 @@
          body{
             background: linear-gradient(to top,  #5eaadd96, #665d94);
         }
+        .card-title{
+            min-height: 50px;
+
+        }
     </style>
 </head>
 
@@ -145,7 +149,7 @@
                             data.products.forEach(categoryProduct => {
                                 if (categoryProduct.id !== productId && categoryProduct.category === productCategory) {
                                     const categoryProductCard = document.createElement('div');
-                                    categoryProductCard.className = 'col-md-3 mb-4';
+                                    categoryProductCard.className = 'col-md-3 mb-4'; 
                                     categoryProductCard.innerHTML = `
                                         <div class="card shadow-sm">
                                             <img src="${categoryProduct.thumbnail}" class="card-img-top" alt="Image of ${categoryProduct.title}">
